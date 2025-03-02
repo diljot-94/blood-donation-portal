@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Information</title>
+    <link rel="stylesheet" href="style3.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-bar {
+            background-color: #e63946;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            position: absolute;
+            left: 15px;
+            top: 15px;
+        }
+
+        .info-content {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Stylish Bullet Points */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: #ff6b6b;
+            color: white;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        ul li:hover {
+            background: #e63946;
+            transform: scale(1.05);
+        }
+        /* Adding Icons */
+        ul li::before {
+            content: "🩸";
+            font-size: 22px;
+            margin-right: 10px;
+        }
+        /* Footer Styling */
+        .footer1 {
+            text-align: center;
+            padding: 15px;
+            background-color: #e63946;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="index3.html" class="back-btn">← Back to Dashboard</a>
+        <h1 id="infoTitle"></h1>
+    </div>
+
+    <div class="info-content">
+        <p id="infoText"></p>
+    </div>
+
+    <script>
+        // Information Data
+        const infoData = {
+    "Blood Purity & Care": `
+        <ul>
+            <li>Regular blood donation removes excess iron, reducing the risk of iron overload.</li>
+            <li>Helps in the production of fresh red blood cells, improving overall circulation.</li>
+            <li>Reduces the risk of heart disease and certain types of cancer.</li>
+            <li>Promotes overall blood health and keeps the body’s iron levels balanced.</li>
+            <li>Flushes out toxins from the bloodstream, improving body function.</li>
+            <li>Supports the immune system by maintaining healthy blood viscosity.</li>
+            <li>Reduces oxidative stress, which can lead to various chronic diseases.</li>
+            <li>Enhances oxygen flow to organs, improving overall body performance.</li>
+            <li>Contributes to a healthier metabolic rate and energy levels.</li>
+            <li>Improves mental clarity and cognitive function through better circulation.</li>
+        </ul>
+    `,
+    "Benefits of Blood Donation": `
+        <ul>
+            <li>Saves lives by providing vital blood to those in need.</li>
+            <li>Improves heart health by lowering harmful iron levels.</li>
+            <li>Reduces the risk of stroke and heart attack.</li>
+            <li>Early detection of health issues through mandatory donor screenings.</li>
+            <li>Enhances mental well-being by fostering a sense of community and generosity.</li>
+            <li>Encourages a healthy lifestyle by making donors mindful of their health.</li>
+            <li>Boosts the body’s ability to produce fresh, healthy blood cells.</li>
+            <li>Decreases stress levels by creating a positive impact on society.</li>
+            <li>Acts as a mini health check-up, helping donors stay aware of their health.</li>
+            <li>Strengthens community bonds and promotes a culture of giving.</li>
+        </ul>
+    `,
+    "Health Tips for Donors": `
+        <ul>
+            <li>Stay well-hydrated before and after donating.</li>
+            <li>Eat a nutritious meal rich in iron and vitamin C.</li>
+            <li>Avoid alcohol, caffeine, and strenuous activities for 24 hours.</li>
+            <li>If feeling dizzy, lie down and elevate your legs.</li>
+            <li>Get enough rest to help your body recover quickly.</li>
+            <li>Consume foods that replenish lost nutrients like spinach, fish, and nuts.</li>
+            <li>Wear comfortable clothing with easy access to your arms.</li>
+            <li>Report any unusual symptoms to the medical staff immediately.</li>
+            <li>Relax during the donation process to keep blood pressure stable.</li>
+            <li>Avoid smoking for a few hours post-donation to ensure better oxygen flow.</li>
+        </ul>
+    `,
+    "Blood Type Compatibility": `
+        <ul>
+            <li><strong>O-negative:</strong> Universal donor; can donate to all blood types.</li>
+            <li><strong>AB-positive:</strong> Universal recipient; can receive from any blood type.</li>
+            <li><strong>Matching blood types:</strong> Ensures safer transfusions.</li>
+            <li><strong>Rh factor (+/-):</strong> Plays a crucial role in compatibility.</li>
+            <li>Knowing your blood type can be life-saving in emergencies.</li>
+            <li>A+ and A- can donate to A and AB blood types.</li>
+            <li>B+ and B- can donate to B and AB blood types.</li>
+            <li>O+ can donate to all positive blood types but not negative.</li>
+            <li>Blood type is inherited genetically and remains unchanged.</li>
+            <li>Compatibility ensures the recipient's immune system does not reject the blood.</li>
+        </ul>
+    `,
+    "Iron Levels & Diet": `
+        <ul>
+            <li>Eat iron-rich foods like spinach, red meat, lentils, and fortified cereals.</li>
+            <li>Pair iron with vitamin C sources (e.g., citrus fruits) to enhance absorption.</li>
+            <li>Avoid excessive tea or coffee, as they can reduce iron absorption.</li>
+            <li>Regular donors should consider iron supplements after consulting a doctor.</li>
+            <li>Legumes, tofu, and nuts are great plant-based sources of iron.</li>
+            <li>Calcium-rich foods can interfere with iron absorption; avoid pairing them.</li>
+            <li>Lean meats and seafood provide easily absorbable heme iron.</li>
+            <li>Cooking in cast iron pans can slightly increase iron intake.</li>
+            <li>Beets and pomegranates help boost hemoglobin levels naturally.</li>
+            <li>Monitor iron levels through regular blood tests to avoid deficiencies.</li>
+        </ul>
+    `,
+    "Emergency Blood Needs": `
+        <ul>
+           
+        </ul>
+    `
+};
+
+        // Get Query Parameter from URL
+        const params = new URLSearchParams(window.location.search);
+        const infoKey = params.get("info");
+
+        // Update Page Content
+        if (infoData[infoKey]) {
+            document.getElementById("infoTitle").innerText = infoKey;
+            document.getElementById("infoText").innerHTML = infoData[infoKey]; // Use innerHTML for formatting
+        } else {
+            document.getElementById("infoTitle").innerText = "Information Not Found";
+            document.getElementById("infoText").innerText = "Please select a valid topic from the dashboard.";
+        }
+        
+    </script>
+
+    <!-- Footer -->
+    <div class="footer1">
+        <p>© 2025 Blood Donation Portal. All Rights Reserved.</p>
+    </div>
+</body>
+</html>
