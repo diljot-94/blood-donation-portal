@@ -1,0 +1,81 @@
+/* General Page Styling */
+body {
+   font-family: Arial, sans-serif;
+   background: url('http://content.health.harvard.edu/wp-content/uploads/2023/08/b0dc8f35-3126-4eae-b575-38285553c9a4.jpg');
+   background-size: cover;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+   margin: 0;
+}
+
+/* Heading Styling */
+h1 {
+   color: rgba(204, 46, 46, 0.923);
+   background:linear-gradient;
+   backdrop-filter: blur(20px);
+   font-weight: bold;
+   border-radius: 5px;
+   font-size: 35px;
+   padding: 10px;
+   margin-bottom: 20px;
+}
+
+/* Form Box */
+.form-box {
+   width: 350px;
+   background:linear-gradient;
+   backdrop-filter: blur(20px);
+   padding: 25px;
+   border-radius: 10px;
+   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+   text-align: center;
+   margin-top: 20px;
+}
+
+/* Input Fields */
+input, select {
+   width: 100%;
+   padding: 12px; /* Increased padding for better appearance */
+   margin: 10px 0;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   font-size: 16px;
+   box-sizing: border-box; /* Ensures padding is inside the width */
+}
+
+/* File Input Styling */
+input[type="file"] {
+   padding: 10px;
+   margin: 10px 0;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   font-size: 14px;
+}
+
+/* Submit Button */
+button {
+   width: 100%;
+   padding: 12px; /* Increased padding for better appearance */
+   border: none;
+   border-radius: 5px;
+   background: #cd2e2e;
+   color: white;
+   font-size: 18px;
+   cursor: pointer;
+   transition: background 0.3s ease; /* Smooth hover effect */
+}
+
+button:hover {
+   background: #d0076f;
+}
+
+/* Message Text */
+#message {
+   margin-top: 15px;
+   font-weight: bold;
+   color: green;
+   text-align: center;
+}
