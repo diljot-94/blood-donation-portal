@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Dashboard</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="profile">
+            <img id="profileIcon" src="default-profile.png" alt="Profile Icon">
+            <span id="userName">User Name</span>
+            <span class="edit-icon" onclick="openProfilePopup()">✎</span>
+        </div>
+        
+        <div class="search-bar">
+            <input type="text" id="bloodGroupSearch" placeholder="Search Blood Group">
+            <button onclick="searchBloodGroup()">Search</button>
+        </div>
+    </div>
+    </div>
+    
+    
+    <div id="profilePopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closeProfilePopup()">&times;</span>
+            <h2>Edit Profile</h2>
+            <form id="editProfileForm">
+                <label>Name:</label>
+                <input type="text" id="newName">
+                <label>Email:</label>
+                <input type="email" id="newEmail">
+                <label>Phone Number:</label>
+                <input type="text" id="newPhone">
+                <label>Blood Group:</label>
+                <input type="text" id="newBloodGroup">
+                <label>Age:</label>
+                <input type="number" id="newAge">
+                <label>Diet:</label>
+                <input type="text" id="newDiet">
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="info-boxes">
+        <div class="info-box" onclick="redirectToInfo('Blood Purity & Care')">
+            <h3>Blood Purity & Care</h3>
+        </div>
+        <div class="info-box" onclick="redirectToInfo('Benefits of Blood Donation')">
+            <h3>Benefits of Blood Donation</h3>
+        </div>
+        <div class="info-box" onclick="redirectToInfo('Health Tips for Donors')">
+            <h3>Health Tips for Donors</h3>
+        </div>
+        <div class="info-box" onclick="redirectToInfo('Blood Type Compatibility')">
+            <h3>Blood Type Compatibility</h3>
+        </div>
+        <div class="info-box" onclick="redirectToInfo('Iron Levels & Diet')">
+            <h3>Iron Levels & Diet</h3>
+        </div>
+        <div class="info-box" onclick="redirectToInfo('Emergency Blood Needs')">
+            <h3>Emergency Blood Needs</h3>
+            <div class="search-container">
+                <button class="emergency-btn" onclick="notifyEmergency()">🚨</button>
+        </div>
+    </div>
+    <!-- Donation Process Section -->
+    <div class="process-section">
+        <h2>Donation Process</h2>
+        <div class="process-steps">
+            <ul>
+                <li>📍 Find the nearest blood donation center.</li>
+                <li>📋 Register and complete a short medical checkup.</li>
+                <li>🩸 Donate blood (takes around 10-15 minutes).</li>
+                <li>💪 Rest and refresh with snacks provided.</li>
+                <li>🏆 Receive a donor certificate & rewards!</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+     <!-- Footer -->
+     <div class="footer">
+        <p>© 2025 Blood Donation Portal. All Rights Reserved.</p>
+        <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
