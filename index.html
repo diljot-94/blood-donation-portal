@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation - Register & Login</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <div class="container">
+        <!-- ✅ Registration Form -->
+        <div id="registerBox" class="form-box">
+            <h2>BLOOD DONATION</h2>
+            <form id="signupForm">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter Your Name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter Your Email" required>
+
+                <label for="phno">Phone Number</label>
+                <input type="tel" id="phno" placeholder="Enter Your Phone Number" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter Your Password" required>
+
+                <button type="submit">Register</button>
+                <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+            </form>
+        </div>
+
+        <!-- ✅ Login Form -->
+        <div id="loginBox" class="form-box" style="display: none;">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="loginPhno">Phone Number</label>
+                <input type="tel" id="loginPhno" placeholder="Enter Your Phone Number" required>
+
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" placeholder="Enter Your Password" required>
+
+                <button type="submit">Login</button>
+                <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>
+        
